@@ -4,10 +4,10 @@ import { EcommerceServService  } from 'src/app/services/ecommerce-serv.service';
 
 @Component({
   selector: 'navbar',
-  templateUrl: './navbar-comp.component.html',
-  styleUrls: ['./navbar-comp.component.css']
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class NavbarCompComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
   constructor(public productServ: EcommerceServService) { }
 

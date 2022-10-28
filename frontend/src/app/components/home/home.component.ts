@@ -3,11 +3,11 @@ import { EcommerceServService } from 'src/app/services/ecommerce-serv.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'ecommerce-comp',
-  templateUrl: './ecommerce-comp.component.html',
-  styleUrls: ['./ecommerce-comp.component.css'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
 })
-export class EcommerceCompComponent implements OnInit {
+export class HomeComponent implements OnInit {
   constructor(
     public productServ: EcommerceServService,
     private ruta: ActivatedRoute
