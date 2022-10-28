@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <br />
+  <br />
+  <br />
+  <div class="card" style="max-width: 2000px">
+    <h1 class="card-text pt-4 ms-5">Purchase Detail</h1>
+    <hr class="my-4" />
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src="../../../assets/img/{{ productServ.datosProd.url_img }}"
+          class="img-fluid rounded-start"
+          alt="hoodie"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title">{{ productServ.datosProd.article }}</h2>
+          <h4 class="card-text">Features</h4>
+          <p class="card-text text-muted">
+            {{ productServ.datosProd.description }}
+          </p>
+          <h3 class="card-text text-primary">
+            $ {{ productServ.datosProd.price }}
+          </h3>
+          <br />
+          <!-- Boton compar -->
+          <form
+            #miFormulario="ngForm"
+            (ngSubmit)="agregarProducto(miFormulario)"
+          >
+            <input
+              type="hidden"
+              id="id_producto"
+              name="id_producto"
+              [(ngModel)]="productServ.datosProd._id"
+            />
+            <input
+              type="hidden"
+              id="name_product"
+              name="name_product"
+              [(ngModel)]="productServ.datosProd.article"
+            />
+            <input
+              type="hidden"
+              id="unit_price"
+              name="unit_price"
+              [(ngModel)]="productServ.datosProd.price"
+            />
+            <hr class="my-4" />
+            <button type="submit" class="btn btn-primary me-3">
+              Add to Cart
+            </button>
+            <input
+              type="number"
+              class="btn btn-secondary"
+              id="amount"
+              name="amount"
+              min="1"
+              max="{{ productServ.datosProd.stock }}"
+              [(ngModel)]="productServ.datosCompr.amount"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">&copy; 2022 Ecommerce Alvaro Leal</p>
+  <ul class="list-inline">
+    <li class="list-inline-item text-secondary">privacy</li>
+    <li class="list-inline-item text-secondary">Terms</li>
+    <li class="list-inline-item text-secondary">Support</li>
+  </ul>
+</footer>
